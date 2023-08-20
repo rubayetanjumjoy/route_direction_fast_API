@@ -47,7 +47,7 @@ app = FastAPI()
 @app.get("/direction")
 async def get_direction(request: Request):
     coordinates = request.query_params.get('coordinates')
-    
+    optimizer = request.query_params.get('optimizer')    
     
     index_b=coordinates.index('b')
        
@@ -80,7 +80,7 @@ async def get_direction(request: Request):
     print("Latitude 1st:", lat_1st)
     print("Longitude 2nd:", lng_2nd)
     print("Latitude 2nd:", lat_2nd)
-    optimizer = 'travel_time'    
+        
     # # Create the graph from place
     # graph = ox.graph_from_place(place, network_type=network_type)
 
